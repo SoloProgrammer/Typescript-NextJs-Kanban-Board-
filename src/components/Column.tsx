@@ -49,11 +49,14 @@ const Column = ({
       copy = copy.filter((c) => c.id !== cardId);
 
       if (moveToEnd) {
+        // after filtering the cards as per column the newly added card will appear at the end of that coloum even if we are pushing the cardToTrasnfer at the very end of the copy of cards!
         copy.push(cardToTransfer);
       } else {
         const insertAtIndex = copy.findIndex((c) => c.id === before);
         copy.splice(insertAtIndex, 0, cardToTransfer);
       }
+
+      console.log(copy);
 
       setCards(copy);
     }

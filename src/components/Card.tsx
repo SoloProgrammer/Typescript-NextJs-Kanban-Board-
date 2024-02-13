@@ -1,4 +1,4 @@
-import { CardPropsType, DropIndicatorPropsType } from "@/types/types";
+import { CardPropsType } from "@/types/types";
 import React, { DragEvent, useState } from "react";
 import { motion } from "framer-motion";
 import DropIndicator from "./DropIndicator";
