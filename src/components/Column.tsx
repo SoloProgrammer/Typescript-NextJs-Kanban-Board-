@@ -24,8 +24,6 @@ const Column = ({
     setActive(false);
   };
   const handleDrop = (e: DragEvent) => {
-    console.log(column);
-
     handleDragEnd();
     const cardId = e.dataTransfer.getData("cardId");
     // console.log(id);
@@ -54,8 +52,6 @@ const Column = ({
         const insertAtIndex = copy.findIndex((c) => c.id === before);
         copy.splice(insertAtIndex, 0, cardToTransfer);
       }
-
-      console.log(copy);
 
       setCards(copy);
     }
@@ -101,7 +97,7 @@ const Column = ({
   const getIndicators = () => {
     return Array.from(document.querySelectorAll(`[data-column=${column}]`));
   };
-  
+
   return (
     <div
       onDragOver={handleDragOver}
@@ -119,7 +115,7 @@ const Column = ({
         }`}
       >
         {filteredCards.map((card: CardType) => {
-          return <Card key={card.id} {...card} />;
+          return <Card key={card.id} {...card} setCards={setCards} />;
         })}
         <DropIndicator beforeId={"-1"} column={column} />
         <AddCard cards={cards} column={column} setCards={setCards} />
