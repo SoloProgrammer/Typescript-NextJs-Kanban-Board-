@@ -3,14 +3,17 @@ import React, { DragEvent, useState } from "react";
 import { motion } from "framer-motion";
 import DropIndicator from "./DropIndicator";
 
-const Card = ({ title, id, column, handleDragStart }: CardPropsType) => {
+const Card = ({ title, id, column }: CardPropsType) => {
+
   const [active, setActive] = useState(false);
+
   const onDragStart = (
     e: DragEvent<HTMLDivElement> | MouseEvent | TouchEvent | PointerEvent
   ) => {
-    handleDragStart(e, id);
+    (e as DragEvent<HTMLDivElement>).dataTransfer.setData("cardId", id);
     setActive(true);
   };
+  
   return (
     <>
       <DropIndicator beforeId={id} column={column} />

@@ -5,9 +5,7 @@ export type CardType = {
   id: string;
   column: string;
 };
-export type CardPropsType = {
-  handleDragStart: Function;
-} & CardType;
+export type CardPropsType = CardType;
 
 export type AddCardPropsType = {
   column: string;

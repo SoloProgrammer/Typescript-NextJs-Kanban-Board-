@@ -1,8 +1,8 @@
+"use client";
 import { AddCardPropsType } from "@/types/types";
 import React, { FormEvent, useRef, useState } from "react";
 import { motion } from "framer-motion";
 const AddCard = ({ column, setCards, cards }: AddCardPropsType) => {
-    
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(!isOpen);
@@ -34,6 +34,8 @@ const AddCard = ({ column, setCards, cards }: AddCardPropsType) => {
             placeholder="Add new task..."
             id="addcard"
             ref={titleRef}
+            autoFocus
+            autoComplete="false"
             cols={30}
             rows={2}
           ></textarea>
