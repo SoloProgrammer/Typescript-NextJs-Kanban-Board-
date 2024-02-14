@@ -1,18 +1,20 @@
 import { ReactNode } from "react";
 
+export type SetCardsType = React.Dispatch<React.SetStateAction<CardType[]>>;
+
 export type CardType = {
   title: string;
   id: string;
   column: string;
 };
 export type CardPropsType = {
-  setCards: React.Dispatch<React.SetStateAction<CardType[]>>;
+  setCards: SetCardsType;
 } & CardType;
 
 export type AddCardPropsType = {
   column: string;
   cards: CardType[];
-  setCards: React.Dispatch<React.SetStateAction<CardType[]>>;
+  setCards: SetCardsType;
 };
 
 export type TextEditorPropsType = {
@@ -25,7 +27,7 @@ export type TextEditorPropsType = {
 };
 
 export type TrashBinPropsType = {
-  setCards: React.Dispatch<React.SetStateAction<CardType[]>>;
+  setCards: SetCardsType;
   cards: CardType[];
 };
 
@@ -34,7 +36,7 @@ export type ColumnPropsType = {
   headingColor: string;
   column: string;
   cards: CardType[];
-  setCards: React.Dispatch<React.SetStateAction<CardType[]>>;
+  setCards: SetCardsType;
 };
 
 export type DropIndicatorPropsType = {
