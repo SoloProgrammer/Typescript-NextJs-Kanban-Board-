@@ -26,7 +26,6 @@ const Column = ({
   const handleDrop = (e: DragEvent) => {
     handleDragEnd();
     const cardId = e.dataTransfer.getData("cardId");
-    // console.log(id);
     const indicators = getIndicators();
     const { element } = getNearestindicator(e, indicators);
 
